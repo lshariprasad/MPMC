@@ -1,0 +1,20 @@
+Memory 
+address          Label             Instruction         Opcode           Comments 
+4100                               LXI H,4200H                          Load the HL with data address 
+4103                               MVI C,00                             Clear C-Reg to count carry 
+4105                               MOV A, M                             Get 1st data in A 
+4106                               INX H   
+4107                               ADD M                                Add reg-A with Memory and Get the sum in A register
+4108                               JNC SKIP                             If CY=0, Skip next step 
+410B                               INR C                                Increment C-Reg 
+410C             SKIP              INX H   
+410D                               MOV M, A                             Store the sum in memory 
+410E                               INX H   
+410F                               MOV M, C                             Store the Carry in memory 
+4110                               HLT                                  Stop the Execution 
+ 
+ SAMPLE DATA:  
+          Input                                   Output 
+Address          Data                 Address               Data 
+4200              2F                   4202                 18  (Sum) 
+4201              E9                   4203                 01  (Carry) 
