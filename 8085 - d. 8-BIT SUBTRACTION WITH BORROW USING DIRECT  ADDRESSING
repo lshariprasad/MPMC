@@ -1,0 +1,14 @@
+Memory 
+address         Label         Instruction         Opcode           Comments 
+4100                          LDA 4201H                            Get 2nd data in A and save in B. 
+4103                          MOV B, A   
+4104                          LDA 4200H                            Get 1st data in A-register 
+4107                          SUB B                                Subtract B-Reg from A register 
+4108                          JNC SKIP                             If CY=0 Then skip next two steps 
+410B                          INR C                                Increment C register to count the carry 
+410C                          CMA                                  Take two’s complement of difference 
+410D                          INR A   
+410E             SKIP         STA 4202H                            Store the Difference in memory 
+4111                          MOV A,C                              Move the Borrow to accumulator and store in memory  
+4112                          STA 4203H   
+4115                          HLT                                  Stop the Execution
