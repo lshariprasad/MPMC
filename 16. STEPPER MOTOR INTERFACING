@@ -1,0 +1,29 @@
+PROGRAM: 
+
+LXI H, 4200H
+MVI C, 04H
+NEXT: MOV A, M
+OUT C0H
+LXI D, 1010H
+LOOP: DCX D
+MOV A, E
+ORA D
+JNZ LOOP
+INX H
+DCR C
+JNZ NEXT
+JMP START
+HLT
+
+OUTPUT: 
+
+SWS        CW             ANTI-CW
+S1      1  1  0  0       0  0  1  1
+S2      0  1  1  0       0  1  1  0
+S3      0  0  1  1       1  1  0  0
+S4      1  0  0  1       1  0  0  1 
+
+SWS 		- Switching Sequence
+S1 		  - Sequence - 1
+CW 		  - Clock Wise
+ANTI CW - ANTI - Clock Wise
