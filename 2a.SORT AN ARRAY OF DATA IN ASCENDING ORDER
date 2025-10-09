@@ -1,0 +1,35 @@
+ASCENDING ORDER 
+
+LDA 4200H
+MOV B, A
+DCR B
+LOOP2: LXI H, 4201H
+MOV C, B
+LOOP1: MOV A, M
+INX H
+CMP M
+JC AHEAD
+MOV D, M
+MOV M, A
+DCX H
+MOV M, D
+INX H
+AHEAD: DCR C
+JNZ LOOP1
+DCR B
+JNZ LOOP2
+HLT
+
+
+Sample Data   
+
+Address  Data Array                Address  Data Array
+(Before sorting)                     (After sorting) 
+4200  07 (Count)                    4200  07 (Count) 
+4201  AB (Data -1)                  4201  34 (Data -1) 
+4202  92 (Data -2)                  4202  4F (Data -2) 
+4203  84 (Data -3)                  4203  69 (Data -3) 
+4204  4F (Data -4)                  4204  84 (Data -4) 
+4205  69 (Data -5)                  4205  92 (Data -5) 
+4206  F2 (Data -6)                  4206  AB (Data -6) 
+4207  34 (Data -7)                  4207  F2 (Data -7) 
