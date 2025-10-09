@@ -1,0 +1,21 @@
+PROGRAM:  
+i) By using 8086 kit: 
+
+MOV SI, 1150H
+MOV DI, 1250H
+MOV CX, 0006H
+CLD
+REPEAT: MOVSB
+LOOP REPEAT
+HLT
+
+
+OUTPUT:  
+INPUT  OUTPUT 
+Address  Data  Address  Data 
+1150.    52.    1250.    52. 
+1151.    53.    1251.    53. 
+1152.    54.    1252.    54. 
+1153.    55.    1253.    55. 
+1154.    56.    1254.    56. 
+1155.    57.    1255.    57.
