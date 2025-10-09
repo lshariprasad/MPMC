@@ -1,0 +1,17 @@
+PROGRAM:
+
+MOV A, #CFH
+MOV B, #21H
+DIV AB
+MOV DPTR, #4500H
+MOVX @DPTR, A
+INC DPTR
+MOV A, B
+MOVX @DPTR, A
+SJMP STOP
+
+OUTPUT:  
+      INPUT          OUTPUT 
+REGISTER  DATA  ADDRESS    DATA 
+4101       CF    4500    6(quotient) 
+4104       21    4501    9(remainder)
