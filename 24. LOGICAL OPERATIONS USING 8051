@@ -1,0 +1,45 @@
+SETTING OF BITS  
+ALGORITHM:  
+3. Load the Data in A-register.  
+4. Load 0F to set the lower nibble in B-register.  
+5. Perform OR operation with B-register.  
+6. Store the Result in memory location.  
+7. Stop the program. 
+
+PROGRAM: 
+
+MOV A, #C3H
+MOV B, #0FH
+ORL A, B
+MOV DPTR, #4500H
+MOVX @DPTR, A
+SJMP STOP
+
+
+OUTPUT:  
+      INPUT          OUTPUT 
+Register  Data  Address  Data 
+4101       C3    4500     CF 
+
+MASKING OF BITS  
+ALGORITHM:  
+1. Load the Data in A-register.  
+2. Load 0F to mask the higher nibble in B-register.  
+3. Perform AND operation with B-register.  
+4. Store the Result in memory location.  
+5. Stop the program.
+
+PROGRAM: 
+
+MOV A, #4DH
+MOV B, #0FH
+ANL A, B
+MOV DPTR, #4500H
+MOVX @DPTR, A
+SJMP STOP
+
+OUTPUT:  
+      INPUT          OUTPUT 
+Register  Data  Address  Data 
+  4101     4D    4500     0D
+
