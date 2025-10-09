@@ -1,0 +1,14 @@
+PROGRAM:  
+
+MOV A, #05H
+MOV B, #04H
+SUBB A, B
+MOV DPTR, #4500H
+MOVX @DPTR, A
+SJMP STOP
+
+OUTPUT:  
+      INPUT          OUTPUT 
+Register  Data  Address  Data 
+  4101    0Ah    4500    08h 
+  4104    02h  
