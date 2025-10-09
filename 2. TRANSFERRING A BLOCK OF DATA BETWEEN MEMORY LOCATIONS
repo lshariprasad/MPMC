@@ -1,0 +1,24 @@
+TRANSFERRING A BLOCK OF DATA BETWEEN MEMORY LOCATIONS 
+
+LXI B, 4200H
+LXI D, 4300H
+MVI H, 07
+NEXT: LDAX B
+STAX D
+INX B
+INX D
+DCR H
+JNZ NEXT
+HLT
+
+
+SAMPLE DATA:  
+Address  Source Array  Address  Destination Array 
+  4200          11        4300.          11 
+  4201          22        4301.          22 
+  4202          33        4302.          33 
+  4203          AA        4303.          AA 
+  4204          BB        4304.          BB 
+  4205          CC        4305.          CC
+  4206          DD        4306.          DD
+  4207          EE        4307.          EE
