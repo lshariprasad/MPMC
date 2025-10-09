@@ -1,0 +1,25 @@
+MASKING OF BITS ALGORITHM:  
+1. Load the Data in A-register.  
+2. Logically AND the content of A with 0FH.  
+3. Store the result in memory location.  
+4. Stop the program 
+
+PROGRAM:  
+iii) By using 8086 kit: 
+LDA 4200H
+ANI 0FH
+STA 4201H
+HLT
+
+SETTING OF BITS ALGORITHM:  
+1. Load the Data in A-register.  
+2. Logically ORI the content of A with 0FH..  
+3. Store the result in memory location.  
+4. Stop the program 
+
+PROGRAM:  
+iv) By using 8086 kit: 
+LDA 4200H
+ORI 0FH
+STA 4201H
+HLT
