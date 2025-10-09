@@ -1,0 +1,23 @@
+PROGRAM: 
+
+MOV SI, 4500H
+MOV CL, [SI]
+MOV CH, 00H
+INC SI
+LOOP_START: MOV AL, [SI]
+MUL AL
+MOV [SI], AL
+INC SI
+LOOP LOOP_START
+HLT
+
+
+
+OUTPUT:  
+INPUT  OUTPUT 
+Register  Data  Address  Data 
+  4500     04   
+  4501     03    4601     09 
+  4502     01    4600     01 
+  4503     02    4601     04 
+  4504     05    4602     25 
