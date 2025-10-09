@@ -1,0 +1,15 @@
+PROGRAM: 
+
+MOV DX, 0000H
+MOV AX, [1200H]
+MOV BX, [1202H]
+DIV BX
+MOV [1204H], AX
+MOV [1206H], DX
+HLT
+
+OUTPUT:
+      INPUT            OUTPUT
+Address    Data  Address    Data  
+1200       EF12  1204       0001  
+1202       ABCD  1206       4345 
