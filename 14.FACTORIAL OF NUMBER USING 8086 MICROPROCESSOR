@@ -1,0 +1,18 @@
+PROGRAM:  
+
+MOV CX, [4]
+MOV AX, 0001H
+MOV DX, 0000H
+FACTORIAL: MUL CX
+LOOP FACTORIAL
+MOV [4], AX
+MOV [4], DX
+HLT
+
+OUTPUT
+      INPUT            OUTPUT
+Address    Data  Address    Data  
+4500        04   4600        18  
+                 4601        00 
+4500        06   4600        D0
+                 4601        02
