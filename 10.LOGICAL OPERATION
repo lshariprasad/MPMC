@@ -1,0 +1,40 @@
+
+MASKING OF BITS  
+ALGORITHM:  
+Load the Data in AX-register.  
+Logically AND the content of AX with 0F0FH.  
+Store the result in memory location.  
+Stop the program 
+
+PROGRAM:
+iii)By using 8086 kit:  
+
+MOV AX, [1200H]
+AND AX, 0F0FH
+MOV [1202H], AX
+HLT
+
+OUTPUT:
+      INPUT            OUTPUT
+Address    Data  Address    Data  
+1200       ABCD  1204       0B0D  
+
+SETTING OF BITS  
+ALGORITHM:  
+3. Load the Data in AX-register.  
+4. Logically OR the content of AX with 0F0FH.  
+5. Store the result in memory location.  
+6. Stop the program  
+
+PROGRAM:
+vi)By using 8086 kit:  
+
+MOV AX, [1200H]
+OR AX, 0F0FH
+MOV [1202H], AX
+HLT
+
+OUTPUT:
+      INPUT            OUTPUT
+Address    Data  Address    Data  
+1200       ABCD  1204       FBFD  
