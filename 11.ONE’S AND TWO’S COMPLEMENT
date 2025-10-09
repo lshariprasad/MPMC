@@ -1,0 +1,15 @@
+PROGRAM:  
+vii) By using 8086 kit:  
+
+MOV AX, [1200H]
+NOT AX
+MOV [1202H], AX
+INC AX
+MOV [1204H], AX
+HLT
+
+OUTPUT
+      INPUT            OUTPUT
+Address    Data  Address    Data  
+1200       12AB  1202       ED54  
+                 1204       ED55
