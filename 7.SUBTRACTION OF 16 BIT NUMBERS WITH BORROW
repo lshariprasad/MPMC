@@ -1,0 +1,17 @@
+PROGRAM :
+
+MOV CX, 0000H
+MOV AX, [1300H]
+MOV BX, [1302H]
+SUB AX, BX
+JNC SKIP
+INC CX
+NEG AX
+SKIP: MOV [1306H], CX
+MOV [1304H], AX
+HLT
+
+      INPUT            OUTPUT
+Address    Data  Address    Data  
+1200       ABCD  1204       4345  
+1202       EF12  1206       0001 
