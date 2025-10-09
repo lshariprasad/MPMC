@@ -1,0 +1,19 @@
+PROGRAM:  
+v) By using 8086 kit: 
+
+LDA 4200H
+CMA
+STA 4201H
+INR A
+STA 4202H
+HLT
+
+
+Input:
+Address	Data
+4200H  	ABH
+
+Final Output:
+Address	Data	  Description
+4201H	  54H	  One’s Complement
+4202H	  55H	  Two’s Complement
