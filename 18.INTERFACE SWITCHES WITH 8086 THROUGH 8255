@@ -1,0 +1,12 @@
+PROGRAM: 
+
+MOV AL, 90H
+OUT C2H, AL
+IN AL, C0H
+MOV [1250H], AL
+HLT
+
+
+         INPUT                                OUTPUT 
+(VARY THE SWITCH POSITIONS                Address  Data 
+ON OFF ON ON OFF ON OFF ON)               1250      B5  
