@@ -1,13 +1,21 @@
-LDA 4201H
-MOV B, A
-LDA 4200H
-MVI C, 00H
+PROGRAM:
+
+LDA 4201h
+MOV B A
+LDA 4200h
+MVI C 00h
 AGAIN: CMP B
 JC STORE
 SUB B
 INR C
 JMP AGAIN
-STORE: STA 4203H
-MOV A, C
-STA 4202H
+STORE: STA 4203h
+MOV A C
+STA 4202h
 HLT
+
+ SAMPLE DATA:  
+          Input                                   Output 
+Address          Data                 Address               Data 
+4200              9F                   4202                 0F  (Quotient) 
+4201              0A                   4203                 09  (Remainder)
