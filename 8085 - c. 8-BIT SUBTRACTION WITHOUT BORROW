@@ -1,11 +1,11 @@
-Memory 
-address    Label       Instruction         Opcode             Comments 
-4100                   LDA 4201H                              ; Get the subtrahend in B register. 
-4103                   MOV B,A   
-4104                   LDA 4200H                              ;Get the minuend in A register 
-4107                   SUB B                                  ; Get the difference in A register. 
-4108                   STA 4202H                              Store the result in memory 
-410B                   HLT                                    Stop the Execution  
+PROGRAM:
+LDA 4201H  
+MOV B, A  
+LDA 4200H  
+SUB B  
+STA 4202H  
+HLT
+
  
  
 Sample data 
