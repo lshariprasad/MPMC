@@ -1,11 +1,19 @@
-LDA 4200H
-MOV E, A
-LDA 4201H
-MOV B, A
-LXI H,0000H
-MVI D,00H
+PROGRAM:
+
+LDA 4200h
+MOV E A
+LDA 4201h
+MOV B A
+LXI H 0000h
+MVI D 00h
 NEXT: DAD D
 DCR B
 JNZ NEXT
-SHLD 4202H
+SHLD 4202h
 HLT
+
+SAMPLE DATA:  
+          Input                                   Output 
+Address          Data                 Address               Data 
+4200              6D                   4202                 26  (Sum) 
+4201              FE                   4203                 6C  (Carry) 
