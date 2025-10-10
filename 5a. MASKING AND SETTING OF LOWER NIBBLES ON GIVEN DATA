@@ -6,10 +6,17 @@ MASKING OF BITS ALGORITHM:
 
 PROGRAM:  
 iii) By using 8086 kit: 
+
 LDA 4200H
 ANI 0FH
 STA 4201H
 HLT
+
+ SAMPLE DATA:  
+          Input                                   Output 
+Address          Data                 Address               Data 
+4200              4A                   4202                  0A 
+
 
 SETTING OF BITS ALGORITHM:  
 1. Load the Data in A-register.  
@@ -19,7 +26,13 @@ SETTING OF BITS ALGORITHM:
 
 PROGRAM:  
 iv) By using 8086 kit: 
+
 LDA 4200H
 ORI 0FH
 STA 4201H
 HLT
+
+ SAMPLE DATA:  
+          Input                                   Output 
+Address          Data                 Address               Data 
+4200              C5                   4202                  CF
