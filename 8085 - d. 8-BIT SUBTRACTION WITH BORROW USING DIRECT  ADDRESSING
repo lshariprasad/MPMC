@@ -1,14 +1,20 @@
 PROGRAM:
 
-LDA 4201H  
-MOV B, A  
-LDA 4200H  
-SUB B  
-JNC SKIP  
-INR C  
-CMA  
-INR A  
-SKIP: STA 4202H  
-MOV A, C  
-STA 4203H  
+LDA 4201h
+MOV B A
+LDA 4200h
+SUB B
+JNC SKIP
+INR C
+CMA
+INR A
+SKIP: STA 4202h
+MOV A C
+STA 4203h
 HLT
+
+ SAMPLE DATA:  
+          Input                                   Output 
+Address          Data                 Address               Data 
+4200              CF                   4202                 0E  (Sum) 
+4201              DD                   4203                 01  (Carry) 
