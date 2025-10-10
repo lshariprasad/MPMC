@@ -1,15 +1,16 @@
-Memory 
-address         Label           Instruction           Opcode         Comments 
-4100                              LDA 4200H                          Get 1st data in A and save in B. 
-4103                              MOV B, A   
-4104                              LDA 4201H                          Get 2nd data in A-register 
-4107                              ADD B                              Get the sum in A register 
-4108                              JNC SKIP                           If CY=0 Then skip next step 
-410B                              INR C                              Increment C register to count the carry 
-410C            SKIP              STA 4202H                          Store the sum in memory 
-410F                              MOV A,C                            Move the carry to accumulator and store in memory
-4110                              STA 4203H   
-4113                              HLT                                Stop the Execution 
+PROGRAM :
+
+LDA 4200H  
+MOV B, A  
+LDA 4201H  
+ADD B  
+JNC SKIP  
+INR C  
+SKIP: STA 4202H  
+MOV A, C  
+STA 4203H  
+HLT
+
  
         Input                            Output 
 Address         Data             Address           Data 
